@@ -1,0 +1,3 @@
+.idea
+python/agnostic_proxy/shared/__pycache__/*
+python/agnostic_proxy/tests/__pycache__/*
