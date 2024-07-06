@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "lerna": "^8.1.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.8",
+    "ts-jest": "^29.1.5",
+    "typescript": "^5.5.3"
+  },
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "lerna run build",
+    "clean": "npm-run-all clean:*",
+    "clean:cache": "rimraf .build-cache",
+    "clean:packages": "lerna run clean",
+    "test": "lerna run test"
+  }
+}

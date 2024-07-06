@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+      "emitDeclarationOnly": true
+    },
+    "include": ["src/**/*", "tests/**/*", "*.js", "*.ts", "tsconfig.build.json"],
+    "references": [
+      {
+        "path": "./tsconfig.build.json"
+      }
+    ]
+  }

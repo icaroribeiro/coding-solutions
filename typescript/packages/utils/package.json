@@ -1,0 +1,15 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:ts",
+    "build:ts": "tsc -b tsconfig.build.json",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  }
+}
