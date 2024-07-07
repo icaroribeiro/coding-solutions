@@ -6,11 +6,6 @@ module.exports = {
     "^.+\\.(ts)$": "ts-jest",
   },
   moduleNameMapper: {
-    "@packages/(.*)": "<rootDir>/src/$1",
-  },
-  globals: {
-    "ts-jest": {
-      tsConfigFile: "tsconfig.json",
-    },
+    "@package/(.*)": "<rootDir>/src/$1",
   },
 };

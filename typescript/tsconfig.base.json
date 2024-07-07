@@ -15,11 +15,12 @@
         "module": "node16",
         "moduleResolution": "node16",
         // "noEmitOnError": true,
-        // "paths": {
-        //     "@acme/*": [
-        //         "./*/src"
-        //     ]
-        // },
+        "paths": {
+            "@foo/*": ["./*/src"],
+            "@packages/*": [
+                "./packages/*/src"
+            ]
+        },
         "rootDir": ".",
         // "skipLibCheck": true,
         "sourceMap": true,
