@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "_version": "20.0.0",
+    "compilerOptions": {
+        "baseUrl": "./packages",
+        "composite": true,
+        "declaration": true,
+        "declarationMap": true,
+        "incremental": true,
+        "lib": [
+            "es2023"
+        ],
+        "module": "node16",
+        "moduleResolution": "node16",
+        "paths": {
+            "@foo/*": [
+                "./*/src"
+            ]
+        },
+        "rootDir": ".",
+        "sourceMap": true
+    },
+    "display": "Node 20"
+}

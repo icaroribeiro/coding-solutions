@@ -1,0 +1,26 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   lernaVersion: '8.1.6',
+0 silly argv   '$0': 'node_modules\\lerna\\dist\\cli.js',
+0 silly argv   script: 'postbuild'
+0 silly argv }
+1 notice cli v8.1.6
+2 verbose packageConfigs Explicit "packages" configuration found in lerna.json. Resolving packages using the configured glob(s): ["packages/*"]
+3 verbose rootPath D:\Python\workspace\src\github.com\icaroribeiro\coding-solutions\monorepo
+4 error Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+4 error   MultipleProjectsWithSameNameError: The following projects are defined in multiple locations:
+4 error   - @foo/foo-lambda:
+4 error     - packages/foo-lambda/dist
+4 error     - packages/foo-lambda
+4 error   - @foo/utils:
+4 error     - packages/utils/dist
+4 error     - packages/utils
+4 error
+4 error   To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+4 error       at validateAndNormalizeProjectRootMap (D:\Python\workspace\src\github.com\icaroribeiro\coding-solutions\monorepo\node_modules\nx\src\project-graph\utils\project-configuration-utils.js:457:15)
+4 error       at mergeCreateNodesResults (D:\Python\workspace\src\github.com\icaroribeiro\coding-solutions\monorepo\node_modules\nx\src\project-graph\utils\project-configuration-utils.js:325:9)
+4 error       at D:\Python\workspace\src\github.com\icaroribeiro\coding-solutions\monorepo\node_modules\nx\src\project-graph\utils\project-configuration-utils.js:266:85
+4 error       at async buildProjectGraphAndSourceMapsWithoutDaemon (D:\Python\workspace\src\github.com\icaroribeiro\coding-solutions\monorepo\node_modules\nx\src\project-graph\project-graph.js:77:31)
+4 error       at async createProjectGraphAndSourceMapsAsync (D:\Python\workspace\src\github.com\icaroribeiro\coding-solutions\monorepo\node_modules\nx\src\project-graph\project-graph.js:208:25)
+4 error       at async createProjectGraphAsync (D:\Python\workspace\src\github.com\icaroribeiro\coding-solutions\monorepo\node_modules\nx\src\project-graph\project-graph.js:197:39)
+4 error       at async detectProjects (D:\Python\workspace\src\github.com\icaroribeiro\coding-solutions\monorepo\node_modules\lerna\dist\index.js:2999:25)
