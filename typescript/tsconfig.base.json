@@ -8,19 +8,18 @@
         "declarationMap": true,
         // "emitDeclarationOnly": true,
         // "esModuleInterop": true,
-        // "incremental": true,
+        "incremental": true,
         "lib": [
             "es2023"
         ],
         "module": "node16",
         "moduleResolution": "node16",
         // "noEmitOnError": true,
-        "paths": {
-            "@foo/*": ["./*/src"],
-            "@packages/*": [
-                "./packages/*/src"
-            ]
-        },
+        // "paths": {
+        //     "@packages/*": [
+        //         "./packages/*/src"
+        //     ]
+        // },
         "rootDir": ".",
         // "skipLibCheck": true,
         "sourceMap": true,

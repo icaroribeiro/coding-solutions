@@ -6,6 +6,6 @@ module.exports = {
     "^.+\\.(ts)$": "ts-jest",
   },
   moduleNameMapper: {
-    "@package/(.*)": "<rootDir>/src/$1",
+    "^/opt/nodejs/(.*)": "../../../packages/*/src",
   },
 };

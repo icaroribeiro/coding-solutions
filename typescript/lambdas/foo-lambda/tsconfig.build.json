@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "tsBuildInfoFile": "../../.build-cache/foo-lambda.tsbuildinfo",
+        "baseUrl": ".",
+        "paths": {
+            "/opt/nodejs/*": [
+                "../../packages/utils/src"
+            ]
+        }
+    },
+    "exclude": [
+        "src/**/*.test.ts"
+    ],
+    "extends": "../../tsconfig.base.json",
+    "include": [
+        "src/**/*"
+    ],
+    "references": [
+        { "path": "../../packages/utils" }
+    ]
+}

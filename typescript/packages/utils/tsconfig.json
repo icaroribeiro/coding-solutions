@@ -3,7 +3,7 @@
     "compilerOptions": {
       "emitDeclarationOnly": true
     },
-    "include": ["src/**/*", "tests/**/*", "*.js", "*.ts", "tsconfig.build.json"],
+    "include": ["src/**/*", "tsconfig.build.json"],
     "references": [
       {
         "path": "./tsconfig.build.json"

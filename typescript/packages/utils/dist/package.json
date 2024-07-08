@@ -1,5 +1,5 @@
 {
-  "name": "@packages/utils",
+  "name": "utils",
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "clean:install": "npm --prefix . ci",
-    "build": "swc ./src --out-dir dist --ignore \"**/*.test.ts",
+    "build": "swc src --out-dir dist --delete-dir-on-start --quiet --ignore src/**/*.test.ts",
     "postbuild": "cp package*.json dist && npm --prefix dist ci",
     "clean": "rm -rf dist *.tsbuildinfo",
     "test": "jest"
