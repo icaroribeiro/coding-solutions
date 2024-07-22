@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "types": ["node"],
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "verbatimModuleSyntax": true,
+    "rootDir": "."
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["test/**/*.test.ts", "dist", "node_modules"]
+}

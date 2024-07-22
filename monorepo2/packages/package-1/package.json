@@ -1,0 +1,14 @@
+{
+	"name": "package-1",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"build": "vite build"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"vite": "^5.3.4"
+	}
+}

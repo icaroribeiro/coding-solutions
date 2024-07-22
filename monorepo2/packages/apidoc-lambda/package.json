@@ -1,0 +1,20 @@
+{
+	"name": "package-3",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"swagger": "npx tsx swagger.ts"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": "Automatic Construction of Swagger Documentation",
+	"devDependencies": {
+		"tsx": "^4.16.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"@types/node": "^20.14.11",
+		"swagger-autogen": "^2.23.7",
+		"typescript": "^5.5.3"
+	}
+}
