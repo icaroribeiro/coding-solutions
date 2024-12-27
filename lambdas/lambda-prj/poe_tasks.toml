@@ -1,0 +1,11 @@
+[tool.poe.tasks]
+lint = "ruff check"
+test = "pytest"
+pre-build = "rm -rf dist"
+setup-requirements = "poetry export --without-hashes --only main -f requirements.txt -o requirements.txt"
+package-lambda-src = "cp -r src dist"
+package-lambda-deps = "poetry run pip install -r requirements.txt -t dist"
+# Package lambda dependencies from Microsoft's Windows operating system
+package-lambda-deps-2 = "poetry run pip install -r requirements.txt -t dist --platform manylinux2014_x86_64 --implementation cp --python-version 3.12 --only-binary=:all:"
+make-bundle = ["package-lambda-src", "package-lambda-deps"]
+build = ["pre-build", "setup-requirements", "make-bundle"]

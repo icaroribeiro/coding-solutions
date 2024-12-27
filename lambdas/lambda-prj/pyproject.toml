@@ -1,0 +1,16 @@
+[tool.poetry.dependencies]
+python
+aws-lambda-typing
+pydantic
+orjson
+boto3-stubs = {extras = ["essential"], version = "^..."}
+
+[tool.poetry.group.dev.dependencies]
+poethepoet
+pytest
+pytest-cov
+factory-boy
+ruff
+pytest-mock
+moto
+boto3

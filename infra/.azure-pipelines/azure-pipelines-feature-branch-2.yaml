@@ -1,0 +1,8 @@
+trigger:
+  branches:
+    include:
+      - features/????/*
+
+variables:
+  - name: branchName
+    value:

@@ -1,0 +1,5 @@
+project = "prj"
+system = "sys"
+unit = "unit"
+environment = "prd"
+region = "sa-east-1"

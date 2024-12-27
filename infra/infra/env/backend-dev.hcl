@@ -1,0 +1,1 @@
+dynamodb_table = "terraform-state-lock-dev-prj-unit"
