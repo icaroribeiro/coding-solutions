@@ -1,0 +1,2 @@
+DevOps -> Test -> Build -> Deploy
+

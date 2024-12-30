@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "./github-actions",
+			"name": "github-actions"
+		},
+		{
+			"path": ".",
+			"name": "ROOT"
+		}
+	],
+	"settings": {}
+}
