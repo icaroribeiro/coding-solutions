@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "create-table"
+version = "0.1.0"
+description = ""
+authors = ["icaroribeiro <icaroribeiro@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+polars = "^1.21.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
