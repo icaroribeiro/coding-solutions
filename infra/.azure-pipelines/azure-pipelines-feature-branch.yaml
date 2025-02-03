@@ -3,3 +3,7 @@ trigger:
 
 pr:
   - features/*
+
+variables:
+  - name: branch-name
+    value: ${{ lower(replace(variables['Build.SourceBranchName'], '-', '')) }}

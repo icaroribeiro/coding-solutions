@@ -25,6 +25,17 @@ class SQSEventService:
                     )
                     logger.error(message)
                     raise Exception(message)
+            elif body.get("SubscribeURL") is not None:
+                subscribe_url = body.get("SubscribeURL")
+                response = requests.get(subscribe_url)
+                logger.debug(
+                    f"Subscription response status code: {response.status_code}"
+                )
+                logger.debug(
+                    "Subscription response body", extra=dict(body=response.json())
+                )
+                logger.info("Subscription successfully performed!")
+                return None
             else:
                 message = "Body does not have expected keys"
                 logger.error(message)

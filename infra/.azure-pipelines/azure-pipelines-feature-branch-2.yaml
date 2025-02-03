@@ -4,5 +4,7 @@ trigger:
       - features/????/*
 
 variables:
-  - name: branchName
-    value:
+  - name: branch_env_name
+    value: ${{ split(variables['Build.SourceBranch'], '/')[3] }}
+  - name: branch_name
+    value: ${{ variables['Build.SourceBranchName'] }}

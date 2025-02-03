@@ -5,6 +5,10 @@
 			"name": "github-actions"
 		},
 		{
+			"path": "./create-table",
+			"name": "create-table"
+		},
+		{
 			"path": ".",
 			"name": "ROOT"
 		}
