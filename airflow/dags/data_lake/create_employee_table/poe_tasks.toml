@@ -1,0 +1,2 @@
+[tool.poe.tasks]
+export-deps = "poetry export --without-hashes --only main -f requirements.txt -o requirements.txt"

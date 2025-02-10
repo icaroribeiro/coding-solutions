@@ -1,15 +1,19 @@
 [tool.poetry]
-name = "proj"
+name = "create-employee-table"
 version = "0.1.0"
 description = ""
 authors = ["icaroribeiro <icaroribeiro@hotmail.com>"]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
 polars = "^1.22.0"
 
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.5"
+poethepoet = "^0.32.2"
+dotenv-cli = "^3.4.1"
 
 [build-system]
 requires = ["poetry-core"]
