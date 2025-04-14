@@ -1,0 +1,2 @@
+[tool.poe.tasks]
+start = "dotenv -f .env run -- uv run src/main.py"
