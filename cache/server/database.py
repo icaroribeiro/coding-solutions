@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, MetaData, String, Table
+from sqlalchemy import Column, String
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker
 
 DATABASE_URL = "postgresql+asyncpg://pguser:pgsecret@localhost:5433/pgdb"
 
@@ -17,16 +17,16 @@ AsyncSessionLocal = sessionmaker(
     bind=engine, class_=AsyncSession, expire_on_commit=False
 )
 
-# Define metadata
-metadata = MetaData()
+Base = declarative_base()
+metadata = Base.metadata
 
-# Define User Table
-User = Table(
-    "users",
-    metadata,
-    Column("id", Integer, primary_key=True),
-    Column("name", String),
-)
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(String, primary_key=True)
+    name = Column(String, nullable=False)
+    email = Column(String, unique=True, nullable=False)
 
 
 # Create all tables

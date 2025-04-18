@@ -1,26 +1,15 @@
 import time
-from contextlib import asynccontextmanager
 from typing import List, Optional
 
 import uvicorn
-from aiocache import Cache, cached
-from aiocache.serializers import PickleSerializer
-from database import User, get_async_db, initialize_database
+from cachetools import TTLCache, cached
+from database_2 import User, get_db, initialize_database
 from fastapi import Depends, FastAPI
 from pydantic import BaseModel, Field
 from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import load_only
+from sqlalchemy.orm import Session, load_only
 
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Startup: Initialize the database
-    await initialize_database()
-    yield
-
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 
 @app.get("/hello")
@@ -46,26 +35,22 @@ class UserSchema(BaseModel):
         from_attributes = True
 
 
-@cached(
-    ttl=60,
-    cache=Cache.MEMORY,
-    serializer=PickleSerializer(),
-)
-async def get_users_from_server(db: AsyncSession, selected_fields: List[str]):
-    print("Get users from server...")
+@cached(cache=TTLCache(ttl=60))
+def get_users_from_server(db: Session, selected_fields: List[str]):
+    print("Get users from server 2...")
     map_attrs = [getattr(User, f) for f in selected_fields]
     stmt = select(User).options(load_only(*map_attrs))
-    result = await db.scalars(stmt)
+    result = db.scalars(stmt)
     return result.all()
 
 
 @app.get("/", response_model=List[UserResponseSchema], response_model_exclude_none=True)
-async def get_users(
-    db: AsyncSession = Depends(get_async_db),
+def get_users(
+    db: Session = Depends(get_db),
 ) -> List[UserResponseSchema]:
     start_time = time.time()
     selected_fields = ["id", "name"]
-    users_from_server = await get_users_from_server(db, selected_fields)
+    users_from_server = get_users_from_server(db, selected_fields)
     end_time = time.time()
     print(f"With caching: Time = {end_time - start_time:.5f} seconds")
     users = [UserSchema.model_validate(user.__dict__) for user in users_from_server]
@@ -83,8 +68,9 @@ async def get_users(
 
 
 if __name__ == "__main__":
+    initialize_database()
     uvicorn.run(
-        app="main:app",
+        app="main_2:app",
         host="0.0.0.0",
         port=8080,
     )
