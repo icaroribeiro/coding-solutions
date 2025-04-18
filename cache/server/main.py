@@ -3,8 +3,7 @@ from contextlib import asynccontextmanager
 from typing import List, Optional
 
 import uvicorn
-from aiocache import Cache, cached
-from aiocache.serializers import PickleSerializer
+from aiocache import cached
 from database import User, get_async_db, initialize_database
 from fastapi import Depends, FastAPI
 from pydantic import BaseModel, Field
@@ -46,11 +45,7 @@ class UserSchema(BaseModel):
         from_attributes = True
 
 
-@cached(
-    ttl=60,
-    cache=Cache.MEMORY,
-    serializer=PickleSerializer(),
-)
+@cached(ttl=60)
 async def get_users_from_server(db: AsyncSession, selected_fields: List[str]):
     print("Get users from server...")
     map_attrs = [getattr(User, f) for f in selected_fields]
