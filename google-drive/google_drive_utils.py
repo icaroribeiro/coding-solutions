@@ -59,5 +59,11 @@ class GoogleDriveUtils:
 
         return result.get("id")
 
+    def rename_file(self, file_id: str, new_name: str):
+        file_metadata = {
+            "name": new_name,
+        }
+        self._drive_service.files().update(fileId=file_id, body=file_metadata).execute()
+
     def delete_file_or_folder(self, file_or_folder_id: str) -> None:
         self._drive_service.files().delete(fileId=file_or_folder_id).execute()
