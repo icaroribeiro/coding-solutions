@@ -5,13 +5,13 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 
-class GoogleDriveUtils:
+class GoogleDriveUtil:
     _drive_service: Any
 
-    def __init__(self, service_account_file_path: str) -> None:
+    def __init__(self, service_account_info: Dict[str, str]) -> None:
         scopes = ["https://www.googleapis.com/auth/drive"]
-        credentials = service_account.Credentials.from_service_account_file(
-            filename=service_account_file_path, scopes=scopes
+        credentials = service_account.Credentials.from_service_account_info(
+            info=service_account_info, scopes=scopes
         )
         self._drive_service = build("drive", "v3", credentials=credentials)
 
