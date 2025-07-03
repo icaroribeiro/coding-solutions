@@ -3,3 +3,4 @@ python/agnostic_proxy/shared/__pycache__/*
 python/agnostic_proxy/tests/__pycache__/*
 **/.venv/**
 **/__pycache__/**
+.venv

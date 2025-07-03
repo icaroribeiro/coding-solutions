@@ -1,0 +1,15 @@
+[project]
+name = "poc-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+    "pytz>=2025.2",
+]
+
+[dependency-groups]
+dev = [
+    "python-dotenv[cli]>=1.1.0",
+]
