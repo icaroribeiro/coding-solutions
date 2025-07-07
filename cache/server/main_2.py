@@ -1,6 +1,5 @@
 import math
 import time
-from datetime import datetime, timedelta
 from typing import List, Optional
 
 import uvicorn
@@ -37,21 +36,14 @@ class UserSchema(BaseModel):
         from_attributes = True
 
 
-@cached(
-    cache=TTLCache(
-        maxsize=math.inf,
-        ttl=timedelta(hours=1).total_seconds(),
-        timer=lambda: datetime.now(),
-    )
-)
+@cached(cache=TTLCache(maxsize=math.inf, ttl=60))
 # @cached(
 #     cache=TTLCache(
 #         maxsize=math.inf,
-#         ttl=timedelta(hours=1).total_seconds(),
-#         timer=lambda: datetime.now(),
+#         ttl=60,
 #     ),
-#     key=lambda self, list1, int2, int3: (
-#         tuple(list1) if isinstance(list1, list) else list1
+#     key=lambda self, param1, param2, query_fields: (
+#         tuple(query_fields) if isinstance(query_fields, list) else query_fields
 #     ),
 # )
 def get_users_from_server(db: Session, selected_fields: List[str]):

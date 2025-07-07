@@ -1,6 +1,5 @@
 import time
 from contextlib import asynccontextmanager
-from datetime import timedelta
 from typing import List, Optional
 
 import uvicorn
@@ -46,13 +45,7 @@ class UserSchema(BaseModel):
         from_attributes = True
 
 
-@cached(ttl=timedelta(hours=1).total_seconds())
-# @cached(
-#     ttl=timedelta(hours=1).total_seconds(),
-#     key=lambda self, list1, int2, int3: (
-#         tuple(list1) if isinstance(list1, list) else list1
-#     ),
-# )
+@cached(ttl=60)
 async def get_users_from_server(db: AsyncSession, selected_fields: List[str]):
     print("Get users from server...")
     map_attrs = [getattr(User, f) for f in selected_fields]

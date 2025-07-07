@@ -1,6 +1,9 @@
-from typing import Generic, TypeVar
+from typing import Annotated, Generic, TypeVar
 
+from fastapi import Query
 from pydantic import BaseModel
+
+from schemas.person_schema import PersonQueryParams, PersonResponse
 
 Model = TypeVar("Model", bound=BaseModel)
 
@@ -23,3 +26,18 @@ class Pagination(BaseModel, Generic[Model]):
             total=total,
             items=items,
         )
+
+def get_people(
+        person_query_params: Annotated[PersonQueryParams, Query()],
+        ...
+)
+...
+pagination = Pagination.create(
+    page=1,
+    ...
+    items=[PersonResponse.model_validate(obj=item.model_dump()) for item in list[PersonModel]]
+)
+
+# model
+class PersonModel(BaseModel):
+    name: str | None = None
