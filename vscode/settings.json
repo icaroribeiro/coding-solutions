@@ -1,0 +1,118 @@
+{
+	"workbench.colorTheme": "Dracula Theme",
+	"editor.rulers": [88],
+	"editor.fontLigatures": true,
+	"editor.fontFamily": "Courier New",
+	"terminal.integrated.fontFamily": "Fira Code",
+	"terminal.integrated.fontSize": 12,
+	"terminal.integrated.shell.windows": "C:\\Program Files\\cmder\\vendor\\git-for-windows\\bin\\bash.exe",
+	"workbench.colorCustomizations": {
+		"editor.selectionHighlightBackground": "#9722c5"
+	},
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"presentationMode.zoomLevel": 2,
+	"[go]": {
+		"editor.insertSpaces": false,
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		},
+		"editor.tabSize": 2
+	},
+	"go.formatTool": "gofmt",
+	"go.toolsManagement.autoUpdate": true,
+	"gitlens.advanced.messages": {
+		"suppressGitDisabledWarning": true
+	},
+	"security.workspace.trust.untrustedFiles": "open",
+	"[python]": {
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit"
+		},
+		"editor.defaultFormatter": "charliermarsh.ruff"
+	},
+	"python.analysis.autoImportCompletions": true,
+	// "python.testing.pytestArgs": [
+	// 	"-v",
+	// 	"-s",
+	// 	"--cov",
+	// 	"src",
+	// 	"--rootdir",
+	// 	"${workspaceFolder}/apps/server2/tests"
+	// ],
+	// "python.analysis.extraPaths": ["${workspaceFolder}/apps/server2/src"],
+	"python.testing.unittestEnabled": false,
+	"python.testing.pytestEnabled": true,
+	// "python.testing.cwd": "${workspaceFolder}",
+	"python.testing.autoTestDiscoverOnSaveEnabled": true,
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": [
+			"source.formatDocument",
+			"source.fixAll.eslint"
+		]
+	},
+	"[json]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": [
+			"source.formatDocument",
+			"source.fixAll.eslint"
+		]
+	},
+	"[typescriptreact]": {
+		"editor.tabSize": 2,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "always"
+		}
+	},
+	"[typescript]": {
+		"editor.tabSize": 2,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "always"
+		}
+	},
+	"workbench.iconTheme": "material-icon-theme",
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"prisma.showPrismaDataPlatformNotification": false,
+	"[terraform]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "hashicorp.terraform"
+	},
+	"[terraform-vars]": {
+		"editor.tabSize": 2 // optionally
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.useTabs": true,
+	"workbench.editorAssociations": {
+		"*.md": "vscode.markdown.preview.editor"
+	},
+	"editor.formatOnSave": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"python.createEnvironment.trigger": "off",
+	"ruff.lineLength": 88,
+	"editor.fontSize": 12,
+	"database-client.autoSync": true
+}
